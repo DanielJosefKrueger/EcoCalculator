@@ -36,4 +36,8 @@ public class ItemAmount {
                 ", amount=" + amount +
                 '}';
     }
+
+    public boolean isUnaffctedByUpgrades() {
+        return unaffctedByUpgrades;
+    }
 }

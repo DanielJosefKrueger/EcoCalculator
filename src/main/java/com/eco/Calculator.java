@@ -5,6 +5,9 @@ import com.eco.items.bars.CopperBar;
 import com.eco.items.bars.GoldBar;
 import com.eco.items.bars.IronBar;
 import com.eco.items.bars.SteelBar;
+import com.eco.items.electric.FloathFloatingCell;
+import com.eco.items.electric.SolarGenerator;
+import com.eco.items.electric.WindTurbine;
 import com.eco.items.industry.CombustionEngine;
 import com.eco.items.industry.CombustionGenerator;
 import com.eco.items.industry.GearBox;
@@ -24,9 +27,11 @@ public class Calculator {
     private Map<Class, Double> itemPriceMap = new HashMap<>();
     private HashMap<Class, Integer> toBuy = new HashMap<>();
 
+    private static final Double FACTOR_UPGRADE = 0.9;
+
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
-        calculator.findNeededComponentsAndPrices(new ItemAmount(new SkidSteer(), 1));
+        calculator.findNeededComponentsAndPrices(new ItemAmount(new WindTurbine(), 1));
         calculator.summarize();
     }
 
@@ -68,15 +73,15 @@ public class Calculator {
         }
         ItemAmount[] ingredients = receipt.getIngredients();
         for (ItemAmount ingredient : ingredients) {
-            int needed = itemAmount.getAmount();
+            int needed = itemAmount.getAmount() ;
             int producedInOneTurn = receipt.getResult().getAmount();
             int times = needed / producedInOneTurn;
             if(times == 0){
                 times =1; // at least once
             }
 
-            int amountIngredient = times * ingredient.getAmount();
-           // System.out.println(itemAmount.getAmount()+ " -times the Receipt " + receipt.toString() + " needs " +  amountIngredient + " of item " + ingredient.getItem());
+            int amountIngredient = roundup(times * ingredient.getAmount() * (ingredient.isUnaffctedByUpgrades()?1:FACTOR_UPGRADE));
+            System.out.println(itemAmount.getAmount()+ " -times the Receipt " + receipt.toString() + " needs " +  amountIngredient + " of item " + ingredient.getItem());
             price += findNeededComponentsAndPrices(new ItemAmount(ingredient.getItem(), amountIngredient));
 
         }
