@@ -5,18 +5,15 @@ import com.eco.items.bars.CopperBar;
 import com.eco.items.bars.GoldBar;
 import com.eco.items.bars.IronBar;
 import com.eco.items.bars.SteelBar;
-import com.eco.items.electric.FloathFloatingCell;
-import com.eco.items.electric.SolarGenerator;
-import com.eco.items.electric.WindTurbine;
-import com.eco.items.industry.CombustionEngine;
-import com.eco.items.industry.CombustionGenerator;
-import com.eco.items.industry.GearBox;
-import com.eco.items.industry.SkidSteer;
+import com.eco.items.electric.*;
+import com.eco.items.industry.*;
 import com.eco.items.mechanic.IronPiston;
 import com.eco.items.mechanic.IronPlatte;
 import com.eco.items.oil.Epoxy;
 import com.eco.items.oil.Plastic;
 import com.eco.items.oil.Rubber;
+import com.eco.items.upgrade.ModernUpgrade1;
+import com.eco.items.upgrade.ModernUpgrade3;
 import com.eco.items.util.Receipt;
 
 import java.util.HashMap;
@@ -27,11 +24,11 @@ public class Calculator {
     private Map<Class, Double> itemPriceMap = new HashMap<>();
     private HashMap<Class, Integer> toBuy = new HashMap<>();
 
-    private static final Double FACTOR_UPGRADE = 0.9;
+    private static final Double FACTOR_UPGRADE = 0.75d;
 
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
-        calculator.findNeededComponentsAndPrices(new ItemAmount(new WindTurbine(), 1));
+        calculator.findNeededComponentsAndPrices(new ItemAmount(new TransmissionPole(), 1));
         calculator.summarize();
     }
 
@@ -46,14 +43,15 @@ public class Calculator {
         itemPriceMap.put(IronPlatte.class, 2.5);
         itemPriceMap.put(CelluloseFiber.class, 1.4);
         itemPriceMap.put(Rivet.class, 1.0);
-        itemPriceMap.put(CombustionEngine.class, 70.0);
-
+        itemPriceMap.put(Cement.class, 1.5);
+        itemPriceMap.put(CombustionEngine.class, 50.0);
         itemPriceMap.put(SteelPipe.class, 2.0);
         itemPriceMap.put(Rubber.class, 3.5);
         itemPriceMap.put(Epoxy.class, 3.5);
         itemPriceMap.put(Plastic.class, 4.0);
-
         itemPriceMap.put(Glass.class, 1.5);
+        itemPriceMap.put(ModernUpgrade1.class, 350.0);
+        itemPriceMap.put(Lumber.class, 3.0);
 
     }
 
