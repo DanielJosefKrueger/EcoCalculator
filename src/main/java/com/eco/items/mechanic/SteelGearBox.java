@@ -1,10 +1,9 @@
-package com.eco.items.industry;
+package com.eco.items.mechanic;
 
-import com.eco.items.CelluloseFiber;
 import com.eco.items.Item;
 import com.eco.items.ItemAmount;
 import com.eco.items.bars.SteelBar;
-import com.eco.items.oil.Epoxy;
+import com.eco.items.industry.SteelGear;
 import com.eco.items.util.Receipt;
 
 public class SteelGearBox extends Item {

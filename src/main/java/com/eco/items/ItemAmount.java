@@ -31,10 +31,7 @@ public class ItemAmount {
 
     @Override
     public String toString() {
-        return "ItemAmount{" +
-                "item=" + item.getClass().getSimpleName() +
-                ", amount=" + amount +
-                '}';
+        return  item.getClass().getSimpleName() + ":" + amount;
     }
 
     public boolean isUnaffctedByUpgrades() {

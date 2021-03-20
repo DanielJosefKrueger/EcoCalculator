@@ -3,11 +3,8 @@ package com.eco.items.electric;
 import com.eco.items.Cement;
 import com.eco.items.Item;
 import com.eco.items.ItemAmount;
-import com.eco.items.Rivet;
 import com.eco.items.bars.SteelBar;
 import com.eco.items.industry.Servo;
-import com.eco.items.industry.SteelGearBox;
-import com.eco.items.industry.SteelPlate;
 import com.eco.items.util.Receipt;
 
 public class RoboticAssemblyLine extends Item {

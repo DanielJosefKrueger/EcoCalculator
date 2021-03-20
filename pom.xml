@@ -7,6 +7,30 @@
     <groupId>com.djkrueger</groupId>
     <artifactId>EcoRechner</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+    <repositories>
+        <repository>
+            <id>scijava.public</id>
+            <url>https://maven.scijava.org/content/groups/public</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/com.github.graphstream/gs-core -->
+        <dependency>
+            <groupId>org.graphstream</groupId>
+            <artifactId>gs-core</artifactId>
+            <version>2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.graphstream</groupId>
+            <artifactId>gs-ui-swing</artifactId>
+            <version>2.0</version>
+        </dependency>
+    </dependencies>
+
+
+
     <build>
         <plugins>
             <plugin>

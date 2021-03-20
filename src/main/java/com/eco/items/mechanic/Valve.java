@@ -2,10 +2,8 @@ package com.eco.items.mechanic;
 
 import com.eco.items.Item;
 import com.eco.items.ItemAmount;
-import com.eco.items.Rivet;
 import com.eco.items.SteelPipe;
-import com.eco.items.electric.AdvancedCircuit;
-import com.eco.items.industry.*;
+import com.eco.items.industry.SteelPlate;
 import com.eco.items.util.Receipt;
 
 public class Valve extends Item {

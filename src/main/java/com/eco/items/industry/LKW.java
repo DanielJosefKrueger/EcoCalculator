@@ -3,8 +3,8 @@ package com.eco.items.industry;
 import com.eco.items.CelluloseFiber;
 import com.eco.items.Item;
 import com.eco.items.ItemAmount;
-import com.eco.items.bars.IronBar;
-import com.eco.items.mechanic.IronPiston;
+import com.eco.items.mechanic.CombustionEngine;
+import com.eco.items.mechanic.GearBox;
 import com.eco.items.util.Receipt;
 
 public class LKW extends Item {

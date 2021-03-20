@@ -1,8 +1,5 @@
 package com.eco.items;
 
-import com.eco.items.bars.SteelBar;
-import com.eco.items.industry.SteelGear;
-import com.eco.items.industry.SteelGearBox;
 import com.eco.items.oil.Plastic;
 import com.eco.items.util.Receipt;
 
