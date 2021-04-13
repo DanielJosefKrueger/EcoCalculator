@@ -10,11 +10,11 @@ public class SteamEngine extends Item {
 
     public Receipt getReceipt(){
         return new Receipt(new ItemAmount(new Refinery(), 1),
-                new ItemAmount(new IronPiston(), 12),
-                new ItemAmount(new Screw(), 23),
-                new ItemAmount(new IronPlatte(), 23),
-                new ItemAmount(new Boiler(), 6),
-                new ItemAmount(new IronGear(), 16)
+                new ItemAmount(new IronPiston(), 8),
+                new ItemAmount(new Screw(), 18),
+                new ItemAmount(new IronPlatte(), 12),
+                new ItemAmount(new Boiler(), 3),
+                new ItemAmount(new IronGear(), 12)
                 );
     }
 }

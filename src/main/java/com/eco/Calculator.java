@@ -9,9 +9,14 @@ import com.eco.items.bars.SteelBar;
 import com.eco.items.electric.*;
 import com.eco.items.industry.*;
 import com.eco.items.mechanic.*;
+import com.eco.items.misc.Board;
+import com.eco.items.misc.Cloth;
+import com.eco.items.misc.Leather;
 import com.eco.items.oil.Epoxy;
 import com.eco.items.oil.Plastic;
 import com.eco.items.oil.Rubber;
+import com.eco.items.smithing.BlastFurnance;
+import com.eco.items.smithing.IronPipe;
 import com.eco.items.stone.Brick;
 import com.eco.items.stone.ReinforcedConcrete;
 import com.eco.items.upgrade.ModernUpgrade1;
@@ -28,38 +33,44 @@ public class Calculator {
     private HashMap<Class, Integer> toBuy = new HashMap<>();
     private GraphUtil graphUtil;
 
-    private static final Double FACTOR_UPGRADE = 0.75;
+    private static final Double FACTOR_UPGRADE = 0.6;
 
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
-        calculator.findNeededComponentsAndPrices(new ItemAmount(new CombustionGenerator(), 1), null);
+        calculator.findNeededComponentsAndPrices(new ItemAmount(new BlastFurnance(), 1), null);
         calculator.summarize();
     }
 
 
     Calculator(){
-        itemPriceMap.put(CopperBar.class, 3.0);
+        itemPriceMap.put(CopperBar.class, 3.5);
         itemPriceMap.put(GoldBar.class, 9.0);
-        itemPriceMap.put(IronBar.class, 1.5);
+        itemPriceMap.put(IronBar.class, 6.0);
         itemPriceMap.put(SteelBar.class, 4.25);
         //   itemPriceMap.put(GearBox.class, 6.5);
-        itemPriceMap.put(Brick.class, 4.0);
+        itemPriceMap.put(Brick.class, 1.5);
+        itemPriceMap.put(GearBox.class, 20.0);
+        itemPriceMap.put(IronPipe.class, 12.0);
       //  itemPriceMap.put(IronPiston.class, 5.0);
       //  itemPriceMap.put(IronPlatte.class, 2.5);
         itemPriceMap.put(CelluloseFiber.class, 1.4);
         itemPriceMap.put(Rivet.class, 1.0);
         itemPriceMap.put(Cement.class, 1.5);
         //   itemPriceMap.put(CombustionEngine.class, 50.0);
-        itemPriceMap.put(SteelPipe.class, 2.0);
+        itemPriceMap.put(SteelPipe.class, 4.5);
         itemPriceMap.put(Rubber.class, 4.0);
         itemPriceMap.put(Epoxy.class, 4.0);
         itemPriceMap.put(Plastic.class, 4.0);
-        itemPriceMap.put(Glass.class, 4.25);
+        itemPriceMap.put(Glass.class, 3.00);
         itemPriceMap.put(ModernUpgrade1.class, 300.0);
-        itemPriceMap.put(Lumber.class, 3.0);
+        itemPriceMap.put(Lumber.class, 6.0);
         itemPriceMap.put(HeatSink.class, 16.0);
         itemPriceMap.put(SteelPlate.class, 7.2);
         itemPriceMap.put(ReinforcedConcrete.class, 7.2);
+        itemPriceMap.put(Leather.class, 0.5);
+        itemPriceMap.put(Cloth.class, 1.0);
+        itemPriceMap.put(Board.class, 1.0);
+
         graphUtil = new GraphUtil();
 
     }
