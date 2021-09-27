@@ -6,7 +6,7 @@ import com.eco.items.bars.IronBar;
 import com.eco.items.stone.Brick;
 import com.eco.items.util.Receipt;
 
-public class SteamEngine extends Item {
+public class PortableSteamEngine extends Item {
 
     public Receipt getReceipt(){
         return new Receipt(new ItemAmount(new Refinery(), 1),

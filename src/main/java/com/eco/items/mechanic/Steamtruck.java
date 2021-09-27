@@ -12,14 +12,14 @@ public class Steamtruck extends Item {
 
     public Receipt getReceipt() {
         return new Receipt(new ItemAmount(new Steamtruck(), 1),
-                new ItemAmount(new IronPlatte(), 12),
-                new ItemAmount(new IronPipe(), 8),
-                new ItemAmount(new Screw(), 24),
-                new ItemAmount(new Leather(), 20),
-                new ItemAmount(new Lumber(), 30),
-                new ItemAmount(new SteamEngine(), 1, true),
+                new ItemAmount(new IronPlatte(), 12, true),
+                new ItemAmount(new IronPipe(), 8, true),
+                new ItemAmount(new Screw(), 24, true),
+                new ItemAmount(new Leather(), 20, true),
+                new ItemAmount(new Lumber(), 30, true),
+                new ItemAmount(new PortableSteamEngine(), 1, true),
                 new ItemAmount(new IronWheel(), 4, true),
-                new ItemAmount(new IronAxle(), 1, true)
+                new ItemAmount(new IronAxle(), 2, true)
         );
     }
 }
